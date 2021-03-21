@@ -1,11 +1,15 @@
 import { src, dest } from "gulp";
-import bs from "browser-sync";
+import browserSync from "browser-sync";
 import pug from "gulp-pug";
+import sass from "gulp-sass";
+import nodeSass from "node-sass";
 
-const browserSync = bs.create();
+sass.compiler = nodeSass;
+
+const localServer = browserSync.create();
 
 function server() {
-  browserSync.init({
+  localServer.init({
     server: {
       baseDir: "build",
     },
@@ -14,6 +18,12 @@ function server() {
 
 export function html() {
   return src("src/views/pages/*.pug").pipe(pug()).pipe(dest("build"));
+}
+
+export function css() {
+  return src("src/scss/**/*.scss")
+    .pipe(sass().on("error", sass.logError))
+    .pipe(dest("build/css"));
 }
 
 export const serve = server;
