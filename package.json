@@ -1,0 +1,18 @@
+{
+  "name": "design-system",
+  "version": "1.0.0",
+  "description": "design system built with gulp",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "esm": "^3.2.25",
+    "gulp": "^4.0.2",
+    "gulp-pug": "^4.0.1",
+    "prettier": "2.2.1"
+  }
+}
